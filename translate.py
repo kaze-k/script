@@ -5,6 +5,7 @@ import json
 import os
 
 
+#伪装成浏览器访问网易在线翻译的函数
 def translate(url,a):
     head = {
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36 Edg/94.0.992.31'
@@ -27,6 +28,8 @@ def translate(url,a):
     response.close()
     return res
 
+
+#输入和输出的函数
 def result():
     url = "https://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule"
     while True:
@@ -40,5 +43,7 @@ def result():
         else:
             translate(url,a)
 
+
+#主程序入口
 if __name__ == '__main__':
     result()
