@@ -32,6 +32,7 @@ def translate(url,a):
 # 输入和输出的函数
 def result():
     url = "https://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule"
+    print('',end='\n')
     while True:
         print('{:=^50}'.format("(按q!退出/按c!清屏)"),end='  ')
         print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
