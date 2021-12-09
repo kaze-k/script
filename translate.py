@@ -5,6 +5,19 @@ import json
 import os
 
 
+# 清屏的函数
+def clean():
+    # 判断系统类别
+    # windows
+    if os.name == 'nt':
+        os.system('cls')
+    # linux
+    elif os.name == 'posix':
+        os.system('clear')
+    else:
+        print("未知系统")
+
+
 # 伪装成浏览器访问网易在线翻译的函数
 def translate(url,a):
     head = {
@@ -32,7 +45,6 @@ def translate(url,a):
 # 输入和输出的函数
 def result():
     url = "https://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule"
-    print('',end='\n')
     while True:
         print('{:=^50}'.format("(按q!退出/按c!清屏)"),end='  ')
         print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())))
@@ -40,15 +52,9 @@ def result():
         if a == 'q!':
             exit()
         elif a == 'c!':
-            # 判断系统类型
-            # windows
-            if os.name == 'nt':
-                os.system('cls')
-            # linux
-            elif os.name == 'posix':
-                os.system('clear')
-            else:
-                print('未知系统')
+            clean()
+        elif a == '':
+            result()
         else:
             translate(url,a)
 
