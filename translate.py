@@ -54,6 +54,7 @@ def result():
         elif a == 'c!':
             clean()
         elif a == '':
+            print('',end='\n')
             result()
         else:
             translate(url,a)
