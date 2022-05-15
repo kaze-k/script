@@ -64,5 +64,6 @@ def result():
 if __name__ == '__main__':
     try:
         result()
-    except:
+    # url解析错误
+    except urllib.error.URLError:
         print('\n',end="请检查网络！\n")
