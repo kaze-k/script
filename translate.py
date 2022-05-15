@@ -62,4 +62,7 @@ def result():
 
 # 主程序入口
 if __name__ == '__main__':
-    result()
+    try:
+        result()
+    except:
+        print('\n',end="请检查网络！\n")
