@@ -67,3 +67,6 @@ if __name__ == '__main__':
     # url解析错误
     except urllib.error.URLError:
         print('\n',end="请检查网络！\n")
+    # ctrl+c退出
+    except KeyboardInterrupt:
+        print('\n',end="已退出\n")
